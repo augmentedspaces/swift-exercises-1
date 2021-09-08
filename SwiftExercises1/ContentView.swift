@@ -15,34 +15,55 @@ class ViewModel: ObservableObject {
     @Published var fibonacci: Int    = 0
     @Published var student: String   = "Jane"
     
-    // TODO: Add logic to list even numbers.
+    // EDIT CODE HERE: ////////////////////////////////////////////////
+
+    // Add any local variables here.
+    var myLocalVar: Int = 0
+    
+    // Add logic to list even numbers.
     func didPressCounterNext() {
+        print("🔺 Did press counter next")
+        print("Value: ", counterEven)
+
         counterEven = 2
     }
 
-    // TODO: Add logic to cycle integers 5 to 0.
+    // Add logic to cycle integers 5 to 0.
     // 5, 4, 3, 2, 1, 0, 5, 4, 3, 2, 1, 0, 5, ...
     func didPressCycleNext() {
+        print("🔺 Did press cycle next")
+        print("Value: ", cycle)
+
         cycle = 1
     }
     
-    // TODO: Add logic to list Fibonacci Sequence.
+    // Add logic to list Fibonacci Sequence.
     func didPressFibonacciNext() {
+        print("🔺 Did press Fibonacci next")
+        print("Value: ", fibonacci)
+
         fibonacci = 1
     }
     
-    // TODO: Add logic to list Augmented Spaces students.
+    // Add logic to list Augmented Spaces students.
     func didPressStudentNext() {
+        print("🔺 Did press Student next")
+        print("Value: ", student)
+
         student = "John"
     }
     
     // Reset any variables used.
-    func resetVariables() {
+    func didResetVariables() {
+        print("🔺 Did reset variables")
+
         counterEven   = 0
         cycle         = 5
         fibonacci     = 0
         student       = "Jane"
     }
+
+    ///////////////////////////////////////////////////////////////////
 }
 
 
@@ -82,7 +103,7 @@ struct ContentView: View {
                 
                 // Reset button
                 Button {
-                    viewModel.resetVariables()
+                    viewModel.didResetVariables()
                 } label: {
                     resetLabel()
                 }
